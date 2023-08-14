@@ -3,4 +3,4 @@ This is a University project for Software Engineering module at THD. I worked as
 
 # Run the Project
 To start the project please instal docker first and write "docker-compose up" in your command prompt. 
-To start the the backend alone, type "mvn spring:boot run"  
+To start the the backend alone, type "mvn spring-boot:run"  
