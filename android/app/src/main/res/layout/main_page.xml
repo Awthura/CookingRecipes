@@ -1,0 +1,116 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/spicesbg">
+
+    <!-- Name of the app -->
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="170dp"
+        android:padding="8dp"
+        android:text="CookPal"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <!-- Rest of your UI components -->
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="220dp"
+        android:text="     Ignite cooking passion,\nembark on flavorful journeys."
+        android:textStyle="bold"
+        android:textColor="#3F51B5" />
+
+    <!-- Search Button -->
+
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="216dp"
+        android:layout_height="36dp"
+        android:layout_below="@+id/description"
+        android:layout_marginHorizontal="100dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
+        android:hint="            Recipe Name"
+        android:textColorHint="#A9A9A9" />
+
+
+    <Button
+        android:id="@+id/advanced_search_button"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_below="@+id/search_bar"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/transparent"
+        android:text="Advanced Search >>"
+        android:textColor="#020202"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/search_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="9dp"
+        android:backgroundTint="#8BC34A"
+        android:text="Search"
+        android:textColor="#FFFFFF" />
+
+
+    <TextView
+        android:id="@+id/suggest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="435dp"
+        android:text="We can suggest you a recipe !"
+        android:textColor="#090909"
+        android:textStyle="bold" />
+
+
+
+
+    <Button
+        android:id="@+id/generate_recipe_button"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/description"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:text="Suggest Recipe"
+        android:backgroundTint="#2196F3"
+        android:textColor="#FFFFFF" />
+
+
+    <TextView
+        android:id="@+id/add_recipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="520dp"
+        android:text="Want to add recipe on CookPal ?"
+        android:textColor="#090909"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/add_recipe_button"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@id/description"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="290dp"
+        android:text="Add Recipe"
+        android:textColor="#FFFFFF" />
+
+
+</RelativeLayout>
+

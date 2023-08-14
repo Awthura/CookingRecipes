@@ -1,0 +1,254 @@
+PS C:\Users\HENDRAN docker inspect mongo_container
+[
+    {
+        Id 252f2f31577d0c85e69a19f314093c6bbe7c2c27ebb5d340b7f0ec4effaaa0a7,
+        Created 2023-05-04T093326.0794154Z,
+        Path docker-entrypoint.sh,
+        Args [
+            mongod
+        ],
+        State {
+            Status running,
+            Running true,
+            Paused false,
+            Restarting false,
+            OOMKilled false,
+            Dead false,
+            Pid 26914,
+            ExitCode 0,
+            Error ,
+            StartedAt 2023-05-04T143719.7271281Z,
+            FinishedAt 2023-05-04T124104.4357281Z
+        },
+        Image sha2568b33e239cde686e9378f9d8941eafa167fdf73527e9e006ab1fe9174c9622797,
+        ResolvConfPath varlibdockercontainers252f2f31577d0c85e69a19f314093c6bbe7c2c27ebb5d340b7f0ec4effaaa0a7resolv.conf,
+        HostnamePath varlibdockercontainers252f2f31577d0c85e69a19f314093c6bbe7c2c27ebb5d340b7f0ec4effaaa0a7hostname,
+        HostsPath varlibdockercontainers252f2f31577d0c85e69a19f314093c6bbe7c2c27ebb5d340b7f0ec4effaaa0a7hosts,
+        LogPath varlibdockercontainers252f2f31577d0c85e69a19f314093c6bbe7c2c27ebb5d340b7f0ec4effaaa0a7252f2f31577d0c85e69a19f314093c6bbe7c2c27ebb5d340b7f0ec4effaaa0a7-json.log, 
+        Name mongo_container,
+        RestartCount 0,
+        Driver overlay2,
+        Platform linux,
+        MountLabel ,
+        ProcessLabel ,
+        AppArmorProfile ,
+        ExecIDs [
+            bccc5f4fe8058973510bc2ebed49d2a594bb956fe833a3fcc3fc8e37d80def4a
+        ],
+        HostConfig {
+            Binds null,
+            ContainerIDFile ,
+            LogConfig {
+                Type json-file,
+                Config {}
+            },
+            NetworkMode default,
+            PortBindings {
+                27017tcp [
+                    {
+                        HostIp ,
+                        HostPort 27017
+                    }
+                ]
+            },
+            RestartPolicy {
+                Name no,
+                MaximumRetryCount 0
+            },
+            AutoRemove false,
+            VolumeDriver ,
+            VolumesFrom null,
+            CapAdd null,
+            CapDrop null,
+            CgroupnsMode host,
+            Dns [],
+            DnsOptions [],
+            DnsSearch [],
+            ExtraHosts null,
+            GroupAdd null,
+            IpcMode private,
+            Cgroup ,
+            Links null,
+            OomScoreAdj 0,
+            PidMode ,
+            Privileged false,
+            PublishAllPorts false,
+            ReadonlyRootfs false,
+            SecurityOpt null,
+            UTSMode ,
+            UsernsMode ,
+            ShmSize 67108864,
+            Runtime runc,
+            ConsoleSize [
+                16,
+                133
+            ],
+            Isolation ,
+            CpuShares 0,
+            Memory 0,
+            NanoCpus 0,
+            CgroupParent ,
+            BlkioWeight 0,
+            BlkioWeightDevice [],
+            BlkioDeviceReadBps null,
+            BlkioDeviceWriteBps null,
+            BlkioDeviceReadIOps null,
+            BlkioDeviceWriteIOps null,
+            CpuPeriod 0,
+            CpuQuota 0,
+            CpuRealtimePeriod 0,
+            CpuRealtimeRuntime 0,
+            CpusetCpus ,
+            CpusetMems ,
+            Devices [],
+            DeviceCgroupRules null,
+            DeviceRequests null,
+            KernelMemory 0,
+            KernelMemoryTCP 0,
+            MemoryReservation 0,
+            MemorySwap 0,
+            MemorySwappiness null,
+            OomKillDisable false,
+            PidsLimit null,
+            Ulimits null,
+            CpuCount 0,
+            CpuPercent 0,
+            IOMaximumIOps 0,
+            IOMaximumBandwidth 0,
+            MaskedPaths [
+                procasound,
+                procacpi,
+                prockcore,
+                prockeys,
+                proclatency_stats,
+                proctimer_list,
+                proctimer_stats,
+                procsched_debug,
+                procscsi,
+                sysfirmware
+            ],
+            ReadonlyPaths [
+                procbus,
+                procfs,
+                procirq,
+                procsys,
+                procsysrq-trigger
+            ]
+        },
+        GraphDriver {
+            Data {
+                LowerDir varlibdockeroverlay23ffe8af5df6ca538bef7184f669c1f9a326f5250a4d89d4d4c468bbb236c8fd7-initdiffvarlibdockeroverlay26576847fa62c68fa79c5f347858ed088c6a4e52eb8778aabb58a83ebf7f3339ddiffvarlibdockeroverlay2359a9dd8160119368390e9aefbc0598529e527d6a690faed9c321c9aeed1fb96diffvarlibdockeroverlay2e5111cfcf3675742b99299624a19e335f4eec1195993e1c9bf901a828d2bdc55diffvarlibdockeroverlay2a8ad9d85b7bdeb45d8b9950f2c0d5ee5f7ef60eefea9cae346df4bd3854f3441diffvarlibdockeroverlay2106c2664966356fd07bd22a0c7c4e1bea3c3620357e2160eda43701561007d1bdiffvarlibdockeroverlay2442cfa55bde462ef1975d1ed5d9e8457d07938f1f7a9f4ed2665f8edd6d531ebdiffvarlibdockeroverlay28f3f4bcaf4277785b96d34975846522983fd2290ce9d956a01f77746bd809433diffvarlibdockeroverlay20d7edfc38164c70bb296a56cf49018c414213734e8b0f26865ac8853eacb78eediffvarlibdockeroverlay2dcdae3613fe0961202677e538882fb0d8a99c2b61b05dbf64f772b1cd112470cdiff,
+                MergedDir varlibdockeroverlay23ffe8af5df6ca538bef7184f669c1f9a326f5250a4d89d4d4c468bbb236c8fd7merged,
+                UpperDir varlibdockeroverlay23ffe8af5df6ca538bef7184f669c1f9a326f5250a4d89d4d4c468bbb236c8fd7diff,
+                WorkDir varlibdockeroverlay23ffe8af5df6ca538bef7184f669c1f9a326f5250a4d89d4d4c468bbb236c8fd7work
+            },
+            Name overlay2
+        },
+        Mounts [
+            {
+                Type volume,
+                Name 1d480e78021a894d3b57551966d6a238fac0f7b9c4fb127a5e5ce1a7198d267a,
+                Source varlibdockervolumes1d480e78021a894d3b57551966d6a238fac0f7b9c4fb127a5e5ce1a7198d267a_data,
+                Destination datadb,
+                Driver local,
+                Mode ,
+                RW true,
+                Propagation 
+            },
+            {
+                Type volume,
+                Name c9419e3ff842e168209ec2b68559b214166fb35c537942e7fb8e75f9a12c4f00,
+                Source varlibdockervolumesc9419e3ff842e168209ec2b68559b214166fb35c537942e7fb8e75f9a12c4f00_data,
+                Destination dataconfigdb,
+                Driver local,
+                Mode ,
+                RW true,
+                Propagation 
+            }
+        ],
+        Config {
+            Hostname 252f2f31577d,
+            Domainname ,
+            User ,
+            AttachStdin false,
+            AttachStdout false,
+            AttachStderr false,
+            ExposedPorts {
+                27017tcp {}
+            },
+            Tty false,
+            OpenStdin false,
+            StdinOnce false,
+            Env [
+                PATH=usrlocalsbinusrlocalbinusrsbinusrbinsbinbin,
+                GOSU_VERSION=1.16,
+                JSYAML_VERSION=3.13.1,
+                MONGO_PACKAGE=mongodb-org,
+                MONGO_REPO=repo.mongodb.org,
+                MONGO_MAJOR=6.0,
+                MONGO_VERSION=6.0.5,
+                HOME=datadb
+            ],
+            Cmd [
+                mongod
+            ],
+            Image mongo,
+            Volumes {
+                dataconfigdb {},
+                datadb {}
+            },
+            WorkingDir ,
+            Entrypoint [
+                docker-entrypoint.sh
+            ],
+            OnBuild null,
+            Labels {
+                org.opencontainers.image.ref.name ubuntu,
+                org.opencontainers.image.version 22.04
+            }
+        },
+        NetworkSettings {
+            Bridge ,
+            SandboxID ae37ce2b8f134a1d0dda11e87c49703dad61229e123e2b081a7db583bb83b32c,
+            HairpinMode false,
+            LinkLocalIPv6Address ,
+            LinkLocalIPv6PrefixLen 0,
+            Ports {
+                27017tcp [
+                    {
+                        HostIp 0.0.0.0,
+                        HostPort 27017
+                    }
+                ]
+            },
+            SandboxKey varrundockernetnsae37ce2b8f13,
+            SecondaryIPAddresses null,
+            SecondaryIPv6Addresses null,
+            EndpointID 64e8bc2a579406c1a0d676ecbffccd7d3700c8ba5f165da71f05b3a0fa5fc83c,
+            Gateway 172.17.0.1,
+            GlobalIPv6Address ,
+            GlobalIPv6PrefixLen 0,
+            IPAddress 172.17.0.2,
+            IPPrefixLen 16,
+            IPv6Gateway ,
+            MacAddress 0242ac110002,
+            Networks {
+                bridge {
+                    IPAMConfig null,
+                    Links null,
+                    Aliases null,
+                    NetworkID e4720a808b0ecab8ca4a3fc6c6d9bb4dc707008cb6694a637e985edb21238299,
+                    EndpointID 64e8bc2a579406c1a0d676ecbffccd7d3700c8ba5f165da71f05b3a0fa5fc83c,
+                    Gateway 172.17.0.1,
+                    IPAddress 172.17.0.2,
+                    IPPrefixLen 16,
+                    IPv6Gateway ,
+                    GlobalIPv6Address ,
+                    GlobalIPv6PrefixLen 0,
+                    MacAddress 0242ac110002,
+                    DriverOpts null
+                }
+            }
+        }
+    }
+]

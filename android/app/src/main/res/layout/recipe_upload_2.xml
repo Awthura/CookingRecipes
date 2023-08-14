@@ -1,0 +1,93 @@
+<!-- upload_recipe_form.xml -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D4E9F3"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:visibility="visible"
+    tools:visibility="visible">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="Upload your own recipe!"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edit_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Recipe Title"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edit_instruction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Category"
+        android:inputType="text"
+        android:maxLines="2"
+        android:minLines="1" />
+
+    <EditText
+        android:id="@+id/edit_rating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="How do you rate your recipe"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/edit_servings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Servings"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/edit_nutrition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nutrition"
+        android:inputType="textMultiLine" />
+
+    <EditText
+        android:id="@+id/edit_total_timing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Preparation Time"
+        android:inputType="time" />
+
+    <EditText
+        android:id="@+id/edit_ingredients"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingredients"
+        android:inputType="textMultiLine"
+        android:maxLines="6"
+        android:minLines="3" />
+
+    <EditText
+        android:id="@+id/edit_instructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Instructions"
+        android:inputType="textMultiLine"
+        android:maxLines="10"
+        android:minLines="6" />
+
+    <Button
+        android:id="@+id/btn_upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#2DAE32"
+        android:text="Upload Recipe"
+        tools:visibility="visible" />
+
+</LinearLayout>

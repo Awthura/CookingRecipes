@@ -1,0 +1,7 @@
+0-10 mins: 26
+11-20 mins: 19
+21-30 mins: 14
+31-45 mins: 21
+46-60 mins: 54
+61-120 mins: 20
+above 120 mins: 27

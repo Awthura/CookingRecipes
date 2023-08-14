@@ -1,0 +1,138 @@
+digraph {
+	User [shape=rectangle]
+	"id: ObjectId" [shape=rectangle]
+	User -> id:" ObjectId"
+	"name: String" [shape=rectangle]
+	User -> name:" String"
+	"email: String" [shape=rectangle]
+	User -> email:" String"
+	"password: String" [shape=rectangle]
+	User -> password:" String"
+	"fullname: String" [shape=rectangle]
+	User -> fullname:" String"
+	"enabled: boolean" [shape=rectangle]
+	User -> enabled:" boolean"
+	"roles: Set<Roles>" [shape=rectangle]
+	User -> roles:" Set<Roles>"
+	"getId(): ObjectId" [shape=rectangle]
+	User -> "getId()":" ObjectId"
+	"setId(id: ObjectId): void" [shape=rectangle]
+	User -> "setId(id":" ObjectId)": void
+	"getEmail(): String" [shape=rectangle]
+	User -> "getEmail()":" String"
+	"setEmail(email: String): void" [shape=rectangle]
+	User -> "setEmail(email":" String)": void
+	"getPassword(): String" [shape=rectangle]
+	User -> "getPassword()":" String"
+	"setPassword(password: String): void" [shape=rectangle]
+	User -> "setPassword(password":" String)": void
+	"getFullname(): String" [shape=rectangle]
+	User -> "getFullname()":" String"
+	"setFullname(fullname: String): void" [shape=rectangle]
+	User -> "setFullname(fullname":" String)": void
+	"isEnabled(): boolean" [shape=rectangle]
+	User -> "isEnabled()":" boolean"
+	"setEnabled(enabled: boolean): void" [shape=rectangle]
+	User -> "setEnabled(enabled":" boolean)": void
+	"getRoles(): Set<Roles>" [shape=rectangle]
+	User -> "getRoles()":" Set<Roles>"
+	"setRoles(roles: Set<Roles>): void" [shape=rectangle]
+	User -> "setRoles(roles":" Set<Roles>)": void
+	Recipes [shape=rectangle]
+	"id: ObjectId" [shape=rectangle]
+	Recipes -> id:" ObjectId"
+	"recipe_name: String" [shape=rectangle]
+	Recipes -> recipe_name:" String"
+	"Category: String" [shape=rectangle]
+	Recipes -> Category:" String"
+	"url: String" [shape=rectangle]
+	Recipes -> url:" String"
+	"prep_time: String" [shape=rectangle]
+	Recipes -> prep_time:" String"
+	"cuisine_path: String" [shape=rectangle]
+	Recipes -> cuisine_path:" String"
+	"cook_time: String" [shape=rectangle]
+	Recipes -> cook_time:" String"
+	"total_time: String" [shape=rectangle]
+	Recipes -> total_time:" String"
+	"servings: String" [shape=rectangle]
+	Recipes -> servings:" String"
+	"yield: String" [shape=rectangle]
+	Recipes -> yield:" String"
+	"ingredients: List<String>" [shape=rectangle]
+	Recipes -> ingredients:" List<String>"
+	"directions: String" [shape=rectangle]
+	Recipes -> directions:" String"
+	"rating: float" [shape=rectangle]
+	Recipes -> rating:" float"
+	"nutrition: List<String>" [shape=rectangle]
+	Recipes -> nutrition:" List<String>"
+	"timing: String" [shape=rectangle]
+	Recipes -> timing:" String"
+	"img_src: String" [shape=rectangle]
+	Recipes -> img_src:" String"
+	"getId(): ObjectId" [shape=rectangle]
+	Recipes -> "getId()":" ObjectId"
+	"setId(id: ObjectId): void" [shape=rectangle]
+	Recipes -> "setId(id":" ObjectId)": void
+	"getRecipe_name(): String" [shape=rectangle]
+	Recipes -> "getRecipe_name()":" String"
+	"setRecipe_name(recipe_name: String): void" [shape=rectangle]
+	Recipes -> "setRecipe_name(recipe_name":" String)": void
+	"getCategory(): String" [shape=rectangle]
+	Recipes -> "getCategory()":" String"
+	"setCategory(Category: String): void" [shape=rectangle]
+	Recipes -> "setCategory(Category":" String)": void
+	"getUrl(): String" [shape=rectangle]
+	Recipes -> "getUrl()":" String"
+	"setUrl(url: String): void" [shape=rectangle]
+	Recipes -> "setUrl(url":" String)": void
+	"getPrep_time(): String" [shape=rectangle]
+	Recipes -> "getPrep_time()":" String"
+	"setPrep_time(prep_time: String): void" [shape=rectangle]
+	Recipes -> "setPrep_time(prep_time":" String)": void
+	"getCuisine_path(): String" [shape=rectangle]
+	Recipes -> "getCuisine_path()":" String"
+	"setCuisine_path(cuisine_path: String): void" [shape=rectangle]
+	Recipes -> "setCuisine_path(cuisine_path":" String)": void
+	"getCook_time(): String" [shape=rectangle]
+	Recipes -> "getCook_time()":" String"
+	"setCook_time(cook_time: String): void" [shape=rectangle]
+	Recipes -> "setCook_time(cook_time":" String)": void
+	"getTotal_time(): String" [shape=rectangle]
+	Recipes -> "getTotal_time()":" String"
+	"setTotal_time(total_time: String): void" [shape=rectangle]
+	Recipes -> "setTotal_time(total_time":" String)": void
+	"getServings(): String" [shape=rectangle]
+	Recipes -> "getServings()":" String"
+	"setServings(servings: String): void" [shape=rectangle]
+	Recipes -> "setServings(servings":" String)": void
+	"getYield(): String" [shape=rectangle]
+	Recipes -> "getYield()":" String"
+	"setYield(yield: String): void" [shape=rectangle]
+	Recipes -> "setYield(yield":" String)": void
+	"getIngredients(): List<String>" [shape=rectangle]
+	Recipes -> "getIngredients()":" List<String>"
+	"setIngredients(ingredients: List<String>): void" [shape=rectangle]
+	Recipes -> "setIngredients(ingredients":" List<String>)": void
+	"getDirections(): String" [shape=rectangle]
+	Recipes -> "getDirections()":" String"
+	"setDirections(directions: String): void" [shape=rectangle]
+	Recipes -> "setDirections(directions":" String)": void
+	"getRating(): float" [shape=rectangle]
+	Recipes -> "getRating()":" float"
+	"setRating(rating: float): void" [shape=rectangle]
+	Recipes -> "setRating(rating":" float)": void
+	"getNutrition(): List<String>" [shape=rectangle]
+	Recipes -> "getNutrition()":" List<String>"
+	"setNutrition(nutrition: List<String>): void" [shape=rectangle]
+	Recipes -> "setNutrition(nutrition":" List<String>)": void
+	"getTiming(): String" [shape=rectangle]
+	Recipes -> "getTiming()":" String"
+	"setTiming(timing: String): void" [shape=rectangle]
+	Recipes -> "setTiming(timing":" String)": void
+	"getImg_src(): String" [shape=rectangle]
+	Recipes -> "getImg_src()":" String"
+	"setImg_src(img_src: String): void" [shape=rectangle]
+	Recipes -> "setImg_src(img_src":" String)": void
+}

@@ -1,0 +1,7 @@
+vegetarian: 96
+meat: 25
+vegan: 56
+vegetarain: 1
+vegan : 2
+meat,: 1
+vegetarian,: 4

@@ -1,0 +1,16 @@
+Desserts: 45
+Side Dish: 33
+Bread: 8
+Drinks Recipes: 13
+Cuisine: 18
+Salad: 20
+Meat and Poultry: 4
+Appetizers and Snacks: 19
+Main Dishes: 7
+Soups, Stews and Chili Recipes: 4
+Everyday Cooking: 4
+Breakfast and Brunch: 4
+Soup Recipes: 1
+Quick Bread Recipes: 1
+Seafood: 3
+Sauces and Condiments: 1

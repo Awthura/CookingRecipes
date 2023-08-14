@@ -1,0 +1,266 @@
+PS C:\Users\HENDRAN> docker --version            
+Docker version 20.10.24, build 297e128
+PS C:\Users\HENDRAN> docker images
+REPOSITORY                 TAG       IMAGE ID       CREATED       SIZE
+docker/welcome-to-docker   latest    73c4dee5ca43   2 weeks ago   13.1MB
+alpine                     latest    9ed4aefc74f6   5 weeks ago   7.05MB
+PS C:\Users\HENDRAN> docker pull mongo
+Using default tag: latest
+latest: Pulling from library/mongo
+1bc677758ad7: Pull complete
+7eb83bb7be98: Pull complete
+e95121721c4c: Pull complete
+799041b403ca: Pull complete
+1828e70ef29a: Pull complete
+8e3781beae9e: Pull complete
+5d5753162333: Pull complete
+44dd404b40f4: Pull complete
+44599c9d5d1b: Pull complete
+Digest: sha256:ff822f0e4b4b3451d242640df57910e9d430134b5d4e7bbcc3e5cfe9b938d8c1
+Status: Downloaded newer image for mongo:latest
+docker.io/library/mongo:latest
+PS C:\Users\HENDRAN> docker run --name mongo_container -d -p 27017:27017 mongo
+252f2f31577d0c85e69a19f314093c6bbe7c2c27ebb5d340b7f0ec4effaaa0a7
+PS C:\Users\HENDRAN> docker images
+REPOSITORY                 TAG       IMAGE ID       CREATED       SIZE
+mongo                      latest    8b33e239cde6   2 hours ago   651MB
+docker/welcome-to-docker   latest    73c4dee5ca43   2 weeks ago   13.1MB
+alpine                     latest    9ed4aefc74f6   5 weeks ago   7.05MB
+PS C:\Users\HENDRAN> docker docker cp C:\Users\HENDRAN\se_ain4\database mongo_container:/data/db/Dataset_labelled.csv
+docker: 'docker' is not a docker command.
+See 'docker --help'
+PS C:\Users\HENDRAN> docker cp C:\Users\HENDRAN\se_ain4\database mongo_container:/data/db/Dataset_labelled.cs        
+PS C:\Users\HENDRAN> docker cp C:\Users\HENDRAN\se_ain4\database mongo_container:/data/db/Dataset_labelled.csv
+PS C:\Users\HENDRAN> docker cp C:\Users\HENDRAN\se_ain4\database\Dataset_labelled.csv  mongo_container:/data/db
+Error response from daemon: Error processing tar file(exit status 1): cannot overwrite directory "/data/db/Dataset_labelled.csv" with non-directory "/data/db"
+PS C:\Users\HENDRAN> docker cp C:\Users\HENDRAN\se_ain4\database\Dataset_labelled.csv  mongo_container:/data/db/
+Error response from daemon: Error processing tar file(exit status 1): cannot overwrite directory "/data/db/Dataset_labelled.csv" with non-directory "/data/db"
+PS C:\Users\HENDRAN> docker cp C:\Users\HENDRAN\se_ain4\database\Dataset_labelled.csv  mongo_container:/data/db/Dataset_labelled.csv
+PS C:\Users\HENDRAN> docker cp C:\Users\HENDRAN\se_ain4\database\Dataset_labelled.csv  mongo_container:/data/db/Dataset_labelled.csv
+PS C:\Users\HENDRAN> docker exec -it mongo_container mongoimport --host localhost:27017 --db my_db --collection my_collection --type csv --file /data/db/Dataset_labelled.csv --headerline
+2023-05-04T09:49:30.441+0000    connected to: mongodb://localhost:27017/
+2023-05-04T09:49:30.552+0000    181 document(s) imported successfully. 0 document(s) failed to import.
+PS C:\Users\HENDRAN> docker exec -it mongo_container mongosh my_db
+Current Mongosh Log ID: 64537ffd0e4fb4ae959fcc2d
+Connecting to:          mongodb://127.0.0.1:27017/my_db?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.8.2
+Using MongoDB:          6.0.5
+Using Mongosh:          1.8.2
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2023-05-04T09:43:21.851+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2023-05-04T09:43:22.981+00:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2023-05-04T09:43:22.981+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+   2023-05-04T09:43:22.982+00:00: vm.max_map_count is too low
+------
+
+------
+   Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+   metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+   The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+   and anyone you share the URL with. MongoDB may use this information to make product
+   improvements and to suggest MongoDB products and deployment options to you.
+
+   To enable free monitoring, run the following command: db.enableFreeMonitoring()
+   To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+------
+
+PS C:\Users\HENDRAN> docker exec -it mongo_container mongo my_db --eval "db.menu_items.find().limit(5)"
+OCI runtime exec failed: exec failed: unable to start container process: exec: "mongo": executable file not found in $PATH: unknown
+PS C:\Users\HENDRAN> docker exec -it mongo_container mongosh my_db --eval "db.menu_items.find().limit(5)"
+Current Mongosh Log ID: 6453820c08c4f6cf83aa4ddc
+Connecting to:          mongodb://127.0.0.1:27017/my_db?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.8.2
+Using MongoDB:          6.0.5
+Using Mongosh:          1.8.2
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2023-05-04T09:43:21.851+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2023-05-04T09:43:22.981+00:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2023-05-04T09:43:22.981+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+   2023-05-04T09:43:22.982+00:00: vm.max_map_count is too low
+------
+
+------
+   Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+   metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+   The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+   and anyone you share the URL with. MongoDB may use this information to make product
+   improvements and to suggest MongoDB products and deployment options to you.
+
+   To enable free monitoring, run the following command: db.enableFreeMonitoring()
+   To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+------
+
+
+PS C:\Users\HENDRAN> docker exec -it mongo_container mongosh my_db --eval "db.my_collection.find().limit(5)"
+Current Mongosh Log ID: 64538273daa5abc8b44c6ca5
+Connecting to:          mongodb://127.0.0.1:27017/my_db?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.8.2
+Using MongoDB:          6.0.5
+Using Mongosh:          1.8.2
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2023-05-04T09:43:21.851+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2023-05-04T09:43:22.981+00:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2023-05-04T09:43:22.981+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+   2023-05-04T09:43:22.982+00:00: vm.max_map_count is too low
+------
+
+------
+   Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+   metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+   The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+   and anyone you share the URL with. MongoDB may use this information to make product
+   improvements and to suggest MongoDB products and deployment options to you.
+
+   To enable free monitoring, run the following command: db.enableFreeMonitoring()
+   To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+------
+
+[
+  {
+    _id: ObjectId("64537faaac049f0c69540132"),
+    id: 3,
+    recipe_name: 'Amazing Apple Butter',
+    Category: 'vegetarian',
+    url: 'https://www.allrecipes.com/recipe/229892/amazing-apple-butter/',
+    prep_time: '10 mins',
+    cuisine_path: '/Side Dish/Sauces and Condiments/Canning and Preserving Recipes/Fruit Butter Recipes/',
+    cook_time: '10 hrs 25 mins',
+    total_time: '10 hrs 40 mins',
+    servings: 48,
+    yield: '6 cups',
+    ingredients: '10 pounds apples, quartered, 4 cups unsweetened apple juice, 1 cup white sugar, 1 tablespoon apple cider vinegar, 1 ½ teaspoons ground cinnamon, ½ teaspoon ground cloves, ½ teaspoon ground allspice, 6  half-pint canning jars with lids and rings',
+    directions: 'Combine apples and apple juice in a stockpot; bring to a boil. Reduce heat and cook at a simmer until apples are soft and mushy, 20 to 30 minutes.\n' +
+      'Spoon apples into a food mill and process into puree while discarding the cores and peels remaining in the mill. Transfer process apples to a slow cooker.\n' +
+      'Cook on High with the lid off until the moisture evaporates and the volume reduces by about half, overnight to 24 hours.\n' +
+      'Stir sugar, apple cider vinegar, cinnamon, cloves, and allspice through the apple puree.\n' +
+      'Continue cooking on High until mixture mounds on a chilled plate without any water separating from the edges, another 2 to 6 hours.\n' +
+      'Sterilize the jars and lids in boiling water for at least 5 minutes. Pack the apple butter into the hot, sterilized jars, filling the jars to within 1/4 inch of the top. Run a knife or a thin spatula around the insides of the jars after they have been filled to remove any air bubbles. Wipe the rims of the jars with a moist paper towel to remove any food residue. Top with lids, and screw on rings.\n' +
+      'Place a rack in the bottom of a large stockpot and fill halfway with water. Bring to a boil and lower jars into the boiling water using a holder. Leave a 2-inch space between the jars. Pour in more boiling water if necessary to bring the water level to at least 1 inch above the tops of the jars. Bring the water to a rolling boil, cover the pot, and process 5 to 10 minutes.\n' +
+      'Remove the jars from the stockpot and place onto a cloth-covered or wood surface, several inches apart, until cool. Once cool, press the top of each lid with a finger, ensuring that the seal is tight (lid does not move up or down at all). Store in a cool, dark area.',
+    rating: 4.9,
+    nutrition: 'Total Fat 0g 0%, Sodium 2mg 0%, Total Carbohydrate 20g 7%, Dietary Fiber 2g 8%, Total Sugars 16g, Protein 0g, Vitamin C 5mg 23%, Calcium 8mg 1%, Iron 0mg 1%, Potassium 127mg 3%',       
+    timing: 'Prep Time: 10 mins, Cook Time: 10 hrs 25 mins, Additional Time: 5 mins, Total Time: 10 hrs 40 mins, Servings: 48, Yield: 6 cups',
+    img_src: 'https://www.allrecipes.com/thmb/x6vOON48-nGa1EFyDtv3yP_-yNE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4097964-91fe5b73052648c7a2dad2ee8283ad23.jpg'
+  },
+  {
+    _id: ObjectId("64537faaac049f0c69540133"),
+    id: 2,
+    recipe_name: 'Awesome Sausage, Apple and Cranberry Stuffing',
+    Category: 'meat',
+    url: 'https://www.allrecipes.com/recipe/13651/awesome-sausage-apple-and-cranberry-stuffing/',
+    prep_time: '15 mins',
+    cuisine_path: '/Side Dish/Stuffing and Dressing Recipes/Sausage Stuffing and Dressing Recipes/',
+    cook_time: '15 mins',
+    total_time: '1 hrs 30 mins',
+    servings: 10,
+    yield: '',
+    ingredients: '3 ¾ cups cubed white bread, 1 ½ cups cubed whole wheat bread, 1 pound ground turkey sausage, 1 cup chopped onion, ¾ cup chopped celery, 2 ½ teaspoons dried sage, 1 ½ teaspoons dried rosemary, ½ teaspoon dried thyme, 1  Golden Delicious apple, cored and chopped, ¾ cup dried cranberries, ⅓ cup minced fresh parsley, 1  cooked turkey liver, finely chopped, ¾ cup turkey stock, 4 tablespoons unsalted butter, melted',
+    directions: 'Preheat the oven to 350 degrees F (175 degrees C).\n' +
+      'Spread white and whole wheat bread cubes in a single layer on a large baking sheet.\n' +
+      'Bake in the preheated oven until evenly toasted, 5 to 7 minutes. Transfer toasted bread cubes to a large bowl.\n' +
+      'Cook sausage and onions in a large skillet over medium heat, stirring and breaking up lumps, until evenly browned, 6 to 8 minutes. Add celery, sage, rosemary, and thyme; cook and stir until flavors blend, about 2 minutes.\n' +
+      'Pour sausage mixture over bread in bowl. Mix in chopped apple, dried cranberries, parsley, and liver. Drizzle with turkey stock and melted butter; mix lightly.\n' +
+      'Allow stuffing to cool completely before loosely stuffing a turkey.\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      'Dotdash Meredith Food Studios\n',
+    rating: 4.8,
+    nutrition: 'Total Fat 12g 15%, Saturated Fat 5g 25%, Cholesterol 80mg 27%, Sodium 548mg 24%, Total Carbohydrate 22g 8%, Dietary Fiber 2g 8%, Total Sugars 9g, Protein 13g, Vitamin C 9mg 44%, Calcium 47mg 4%, Iron 3mg 17%, Potassium 268mg 6%',
+    timing: 'Prep Time: 15 mins, Cook Time: 15 mins, Additional Time: 1 hrs, Total Time: 1 hrs 30 mins, Servings: 10',
+    img_src: 'https://www.allrecipes.com/thmb/A16n6yykk6y6ofEi8akwV-6V9Ck=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/1x1-PASSANO_ALR0922_Faves_Stuffing_5279-7495521ab45c4b8880373657bedc0db5.jpg'
+  },
+  {
+    _id: ObjectId("64537faaac049f0c69540134"),
+    id: 10,
+    recipe_name: 'English Trifle',
+    Category: 'vegetarian',
+    url: 'https://www.allrecipes.com/recipe/8445/english-trifle/',
+    prep_time: '',
+    cuisine_path: '/Cuisine/European/UK and Ireland/English/',
+    cook_time: '',
+    total_time: '',
+    servings: 14,
+    yield: '1 bowl',
+    ingredients: '2 (8 or 9 inch) white cake layers, baked and cooled, 2 pints fresh strawberries, ¼ cup white sugar, 1 pint fresh blueberries, 2  bananas, ¼ cup orange juice, 1 (3.5 ounce) package instant vanilla pudding mix, 2 cups milk, 1 cup heavy whipping cream, ¼ cup blanched slivered almonds, 12  maraschino cherries',
+    directions: 'Slice strawberries and sprinkle them with sugar. Cut the bananas into slices and toss with orange juice. Combine pudding mix with milk and mix until smooth. Cut the cake into 1 inch cubes.\n' +
+      'Use half of the cake cubes to line the bottom of a large glass bowl. Layer half of the strawberries followed by half of the blueberries, and then half of the bananas. Spread half of the pudding over the fruit. Repeat layers in the same order.\n' +
+      'In a medium bowl, whip the cream to stiff peaks and spread over top of trifle. Garnish with maraschino cherries and slivered almonds.\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      '\n',
+    rating: 4.8,
+    nutrition: 'Total Fat 24g 31%, Saturated Fat 9g 43%, Cholesterol 29mg 10%, Sodium 537mg 23%, Total Carbohydrate 98g 36%, Dietary Fiber 3g 12%, Total Sugars 63g, Protein 10g, Vitamin C 36mg 182%, Calcium 234mg 18%, Iron 2mg 13%, Potassium 371mg 8%',
+    timing: 'Servings: 14, Yield: 1 bowl',
+    img_src: 'https://www.allrecipes.com/thmb/7pjri3tdMNkyvhsuksLJ8CAaC90=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/3708740-b8fb8a231a784c44be2feea95d42eafd.jpg'
+  },
+  {
+    _id: ObjectId("64537faaac049f0c69540135"),
+    id: 9,
+    recipe_name: 'Door County Cherry Bounce',
+    Category: 'vegan',
+    url: 'https://www.allrecipes.com/recipe/244754/door-county-cherry-bounce/',
+    prep_time: '10 mins',
+    cuisine_path: '/Drinks Recipes/Liqueur Recipes/',
+    cook_time: '',
+    total_time: '19 days 17 hrs 12 mins',
+    servings: 10,
+    yield: '1 quart',
+    ingredients: '2 cups pitted tart cherries (such as Door County cherries), ⅓ cup white sugar, or to taste, 1 cup vodka, or as needed',
+    directions: 'Put cherries in a clean, 1-quart glass jar; add sugar. Fill the rest of the jar with vodka. Place lid on jar and shake.\n' +
+      'Store jar in a cool, dark area for 1 to 4 months, shaking jar occasionally.',
+    rating: 5,
+    nutrition: 'Total Fat 0g 0%, Saturated Fat 0g 1%, Sodium 0mg 0%, Total Carbohydrate 12g 4%, Dietary Fiber 1g 3%, Total Sugars 11g, Protein 0g, Vitamin C 2mg 10%, Calcium 4mg 0%, Iron 0mg 1%, Potassium 65mg 1%',
+    timing: 'Prep Time: 10 mins, Additional Time: 19 days 17 hrs 2 mins, Total Time: 19 days 17 hrs 12 mins, Servings: 10, Yield: 1 quart',
+    img_src: 'https://www.allrecipes.com/thmb/gdkJ7fo8aPiikqV18MsgTNtsOTY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4542741-door-county-cherry-bounce-Leslie-Kelly-4x3-1-174a9e4fc7b64d8087c3d09f649ebedb.jpg'
+  },
+  {
+    _id: ObjectId("64537faaac049f0c69540136"),
+    id: 12,
+    recipe_name: 'Monte Carlo Cocktail',
+    Category: 'vegan',
+    url: 'https://www.allrecipes.com/recipe/217221/monte-carlo-cocktail/',
+    prep_time: '5 mins',
+    cuisine_path: '/Drinks Recipes/Cocktail Recipes/Whiskey Drinks Recipes/',
+    cook_time: '',
+    total_time: '5 mins',
+    servings: 1,
+    yield: '1 cocktail',
+    ingredients: "  ice, 2 fluid ounces rye whiskey, ¾ fluid ounce Benedictine liqueur, 2 dashes aromatic bitters (such as Peychaud's®, 1  maraschino cherry",
+    directions: 'Fill a cocktail shaker with ice. Pour in whiskey and Benedictine. Shake in bitters. Cover and shake well. Strain into a chilled glass. Garnish with maraschino cherry.',
+    rating: 5,
+    nutrition: 'Sodium 8mg 0%, Total Carbohydrate 7g 3%, Dietary Fiber 0g 0%, Calcium 8mg 1%, Potassium 13mg 0%',
+    timing: 'Prep Time: 5 mins, Total Time: 5 mins, Servings: 1, Yield: 1 cocktail',
+    img_src: 'https://www.allrecipes.com/thmb/yDYt9QvVrzRz0LzP2Irp-Ee41O4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/5990112-monte-carlo-cocktail-Diana-Moutsopoulos-4x3-1-9258774a472e4056af14558b6f3bf91a.jpg'
+  }
+]
